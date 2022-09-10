@@ -9,3 +9,8 @@ variable "name" {
   default     = ""
   description = "Enter the EC2 instance Name"
 }
+
+variable "AWS_ACCESS_KEY_ID" {
+  type        = string
+  default     = ""
+}
