@@ -1,15 +1,11 @@
-provider "aws" {
- access_key = "AKIAWGUFV5YD3RBYPFDG"
-  secret_key = "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"
-  region  = "us-east-1"
+module "ec2_test" {
+  source = "./Modules"
+
+  instance_id = "t2.micro"
+  name        = "test"
 }
 
-/* resource "aws_instance" "web" {
-  ami           ="ami-039a49e70ea773ffc"
-  instance_type = "t2.nano"
+output "ec2" {
+  value       = module.ec2_test.*
 
-  tags = {
-    Name = "HelloWorld"
-  }
-} */
-
+}
