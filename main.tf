@@ -1,7 +1,7 @@
 module "ec2_test" {
   source = "./Modules"
 
-  instance_id = "t2.micro"
+  instance_type = "t2.micro"
   name        = "test"
 }
 

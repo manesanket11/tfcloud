@@ -1,4 +1,4 @@
-variable "instance_id" {
+variable "instance_type" {
   type        = string
   default     = ""
   description = "Enter the EC2 instance Type"
