@@ -6,7 +6,7 @@ module "ec2_test" {
   instance_type = "t2.micro"
   name        = "test"
 }
-
+    }
 output "ec2" {
   value       = module.ec2_test.*
 
