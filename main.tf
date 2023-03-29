@@ -7,8 +7,7 @@ module "ec2_test" {
 }
   
 output "ec2" {
-  value       = module.ec2_test.*
-
+  value       = module.ec2_test.id
 } 
 
   
