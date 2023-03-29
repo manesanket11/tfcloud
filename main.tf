@@ -1,5 +1,5 @@
 
-/*   module "ec2_test" {
+module "ec2_test" {
   module "ec2_test" {
   source = "./Modules"
 
@@ -12,4 +12,4 @@ output "ec2" {
 
 } 
 
-  */
+  
