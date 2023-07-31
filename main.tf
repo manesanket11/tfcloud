@@ -1,16 +1,9 @@
-resource "vault_ad_secret_backend" "config" {
-    backend       = "ad"
-    binddn        = "CN=Administrator,CN=Users,DC=corp,DC=example,DC=net"
-    bindpass      = "SuperSecretPassw0rd"
-    url           = "ldaps://ad"
-    insecure_tls  = "true"
-    userdn        = "CN=Users,DC=corp,DC=example,DC=net"
+resource "vault_auth_backend" "aws" {
+  type = "aws"
 }
 
-resource "vault_ad_secret_role" "role" {
-    backend               = vault_ad_secret_backend.config.backend
-    role                  = "bob"
-    service_account_name  = "Bob"
-    ttl                   = 60
+resource "vault_aws_auth_backend_sts_role" "role" {
+  backend    = vault_auth_backend.aws.path
+  account_id = "1234567890"
+  sts_role   = "arn:aws:iam::426555862535:role/ADTestRole"
 }
-  
